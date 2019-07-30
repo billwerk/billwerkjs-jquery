@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>BillwerkJS Hello World - Billwerk</title>
-        <script type="text/javascript" src="https://sandbox.billwerk.com/selfService/billwerkjs"></script>  
+        <title>subscriptionJS Hello World - billwerk</title>
+        <script type="text/javascript" src="https://selfservice.sandbox.billwerk.com/subscription.js"></script>  
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript">
 
@@ -14,9 +14,9 @@
   	    var componentId = "56af733414a9ff0a38f23dd7"
 	    var paymentMethod = "CreditCard:Paymill";
 
-            var signupService = new BillwerkJS.Signup();
-            var paymentService = new BillwerkJS.Payment({ publicApiKey: publicApiKey },
-                function () { console.log("BillwerkJS payment is ready"); },
+            var signupService = new subscriptionJS.Signup();
+            var paymentService = new subscriptionJS.Payment({ publicApiKey: publicApiKey },
+                function () { console.log("subscriptionJS payment is ready"); },
                 function () { alert("initialization failed!"); });
 
             $(function () {
@@ -24,7 +24,7 @@
                     // enforce HTML5 validation:
                     ev.target.checkValidity();
 
-                    // Create BillwerkJS DTOs from user input
+                    // Create subscriptionJS DTOs from user input
                     var cart = {
                         "planVariantId": planVariantId ,
                         "componentSubscriptions": [{ "componentId": componentId , "quantity": 3}]
@@ -67,7 +67,7 @@
         </style>
     </head>
     <body>
-        <h1>Hello BillwerkJS!</h1>
+        <h1>Hello subscriptionJS!</h1>
             <form id="form">
 		<div>Name</div>
                 <input type="text" id="firstName" required placeholder="First Name"/><br />
